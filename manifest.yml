@@ -1,0 +1,14 @@
+---
+applications:
+- name: testing-report
+  memory: 512MB
+  stack: cflinuxfs3
+  instances: 1
+  random-route: true
+  command: node server.js
+  buildpacks: ['nodejs_buildpack']
+
+  env:
+    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+  services:
+    - alarm-management-rds-dev
